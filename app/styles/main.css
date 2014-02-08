@@ -40,20 +40,20 @@ h1,h2,h3,h4 {
   padding: 10px;
   border: solid 1px #ccc;
 }
-.image-listing {
+.meme-listing {
   margin: 0;
   padding: 10px;
 }
-.image-listing li {
+.meme-listing li {
   padding: 0;
   margin: 10px;
   list-style: none;
   width: 150px;
   text-align: center;
 }
-.image-listing li img {
+.meme-listing li img {
   height: 100px;
 }
-.image-listing li img:hover {
+.meme-listing li img:hover {
   outline: solid 10px orange;
 }

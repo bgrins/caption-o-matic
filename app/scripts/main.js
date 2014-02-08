@@ -21,6 +21,10 @@ window.staticshowdown = {
             model: this.Collections.Images,
             el: $(".file-listing")
         });
+
+        this.Views.memeListing = new memeListingView({
+            el: $(".meme-listing")
+        });
     }
 };
 
