@@ -9,8 +9,8 @@ h1,h2,h3,h4 {
 }
 
 .hero-unit {
-    margin: 50px auto 0 auto;
-    width: 300px;
+  margin: 0;
+  margin-top: 10px;
 }
 
 .file-dropper {
@@ -42,4 +42,34 @@ h1,h2,h3,h4 {
 #canvas-wrap .controls label {
 	display: block;
 	font-weight: bold;
+}
+.listing-wrapper {
+  float: right;
+  width: 200px;
+  padding: 10px;
+  border: solid 1px #ccc;
+
+}
+.memes-wrapper {
+  float: left;
+  width: 200px;
+  padding: 10px;
+  border: solid 1px #ccc;
+}
+.image-listing {
+  margin: 0;
+  padding: 10px;
+}
+.image-listing li {
+  padding: 0;
+  margin: 10px;
+  list-style: none;
+  width: 150px;
+  text-align: center;
+}
+.image-listing li img {
+  height: 100px;
+}
+.image-listing li img:hover {
+  outline: solid 10px orange;
 }
