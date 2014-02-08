@@ -3,12 +3,11 @@ var ImageModel = Backbone.Model.extend({
 		id: '',
 		userID: '',
 		data: ''
-	},
-
+	}
 });
 
-var ImageCollection = Backbone.Collection.extend({
+var ImageCollection = Backbone.Firebase.Collection.extend({
 	model: ImageModel,
 
-    firebase: new Firebase("https://chalupabatman.firebaseio.com/"),
+    firebase: new Firebase("https://chalupabatman.firebaseio.com/Images"),
 });
