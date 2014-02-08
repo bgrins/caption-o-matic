@@ -1,15 +1,6 @@
 var canvasView = Backbone.View.extend({
 
     events: {
-        'blur input.line-box': 'updateLine'
-    },
-
-    updateLine: function (ev) {
-        var input = $(ev.target),
-            line = input.data('line'),
-            val = input.val();
-
-        this['drawLine' + line](val);
     },
 
     getTextOpts: function() {

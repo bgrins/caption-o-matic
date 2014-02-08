@@ -27,24 +27,24 @@ h1,h2,h3,h4 {
 .file-dropper.has-file .empty-notice {
 	display: none;
 }
-#canvas-wrap {
+#preview-wrap {
 	border: 1px solid #333;
 	width: 600px;
 	margin: 0 auto;
   position: relative;
 }
-#canvas-wrap .controls {
+#preview-wrap .controls {
   position: absolute;
   top: -90px;
   right: 0;
 }
-#canvas-wrap .preview {
+#preview-wrap .canvas-wrap {
 	float: left;
 }
-#canvas-wrap .control {
+#preview-wrap .control {
 	margin-left: 20px;
 }
-#canvas-wrap .controls label {
+#preview-wrap .controls label {
 	display: block;
 	font-weight: bold;
 }

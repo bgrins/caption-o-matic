@@ -8,7 +8,7 @@ var memeListingView = Backbone.View.extend({
 
     startEditing: function(e) {
         console.log("Editing started", e.target);
-        window.staticshowdown.Views.canvasView.drawImage(e.target);
+        window.staticshowdown.Views.editorView.loadImage(e.target);
     },
 
     loadImageInCanvas: function(img) {

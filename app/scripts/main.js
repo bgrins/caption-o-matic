@@ -25,8 +25,8 @@ window.staticshowdown = {
         this.Views.memeListing = new memeListingView({
             el: $(".meme-listing")
         });
-        this.Views.canvasView = new canvasView({
-            el: $("#canvas-wrap")
+        this.Views.editorView = new editorView({
+            el: $("#preview-wrap")
         });
     }
 };
