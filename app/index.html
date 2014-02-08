@@ -9,6 +9,8 @@
         <title>staticshowdown</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
+
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
@@ -16,6 +18,7 @@
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
+        <script src='https://cdn.firebase.com/v0/firebase.js'></script>
     </head>
     <body>
         <!--[if lt IE 10]>
@@ -24,16 +27,13 @@
 
 
         <div class="hero-unit">
-          <h1>'Allo, 'Allo!</h1>
-          <p>You now have</p>
-          <ul>
-            <li>HTML5 Boilerplate</li>
-            <li>jQuery</li>
-            <li>Backbone.js</li>
-            <li>Underscore.js</li>
-            <li>Modernizr</li>
-
-          </ul>
+          <div class="file-dropper">
+            <span class="empty-notice">Drop a file here to begin</span>
+          </div>
+          <div class="listing-wrapper">
+            <ul class="file-listing">
+            </ul>
+          </div>
         </div>
 
 
@@ -51,9 +51,14 @@
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/backbone/backbone.js"></script>
+        <script src="bower_components/backfire/backbone-firebase.js"></script>
+       
         <!-- endbuild -->
-
         <!-- build:js({.tmp,app}) scripts/main.js -->
+        <script src="scripts/models/imageModel.js"></script>
+        <script src="scripts/views/fileUploadView.js"></script>
+        <script src="scripts/views/fileListingView.js"></script>
+        <script src="scripts/vendor/filereader.js"></script>
         <script src="scripts/main.js"></script>
         <script src="scripts/templates.js"></script>
         <!-- endbuild -->

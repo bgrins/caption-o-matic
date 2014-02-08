@@ -1,8 +1,29 @@
 body {
     background: #fafafa;
+    font-family: 'Open Sans', Verdana;
+    font-weight: 300;
+}
+
+h1,h2,h3,h4 {
+	font-family: 'Open Sans Condensed', Arial;
 }
 
 .hero-unit {
     margin: 50px auto 0 auto;
     width: 300px;
+}
+
+.file-dropper {
+	border: 2px solid #bada55;
+	border-radius: 5px;
+	padding: 25px;
+	cursor: pointer;
+}
+.file-dropper .empty-notice {
+	color: #bbb;
+	display: block;
+	text-align: center;
+}
+.file-dropper.has-file .empty-notice {
+	display: none;
 }
