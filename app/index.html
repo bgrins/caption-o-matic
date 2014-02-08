@@ -50,6 +50,23 @@
           </div>
         </div>
 
+        <div id="canvas-wrap">
+            <div class="preview">
+                 <canvas width="400" height="400"></canvas>
+            </div>
+            <div class="controls">
+                <div class="control">
+                    <label for='line1'>Top Line:</label>
+                    <input type='text' id='line1' class='line-box' data-line="1" />
+                </div>
+                <div class="control">
+                    <label for='line2'>Bottom Line:</label>
+                    <input type='text' id='line2' class='line-box' data-line="2" />
+                </div>
+            </div>
+            <br style="clear: both;" />
+        </div>
+
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
         /*
@@ -70,11 +87,15 @@
        
         <!-- endbuild -->
         <!-- build:js({.tmp,app}) scripts/main.js -->
+        <script src="scripts/vendor/filereader.js"></script>
+        <script src="scripts/vendor/CanvasText-0.4.js"></script>
+
         <script src="scripts/models/imageModel.js"></script>
         <script src="scripts/views/fileUploadView.js"></script>
         <script src="scripts/views/fileListingView.js"></script>
         <script src="scripts/views/memeListingView.js"></script>
         <script src="scripts/vendor/filereader.js"></script>
+        <script src="scripts/views/canvasView.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>
