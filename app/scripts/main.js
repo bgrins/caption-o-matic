@@ -36,6 +36,34 @@ $(document).ready(function () {
     staticshowdown.init();
 });
 
+$(function () {
+    $("#post-to-imgur").click(function() {
+        var dataurl = window.staticshowdown.Views.canvasView.canvas.toDataURL().replace(/.*,/, '');
+        console.log(dataurl);
+
+        var clientId = "de853a3d6821e1c";
+        var authorization = 'Client-ID ' + clientId;
+
+        $.ajax({
+          url: 'https://api.imgur.com/3/image',
+          method: 'POST',
+          headers: {
+            Authorization: authorization,
+            Accept: 'application/json'
+          },
+          data: {
+            image: dataurl,
+            type: 'base64'
+          },
+          success: function(result) {
+            var id = result.data.id;
+            window.location = 'https://imgur.com/gallery/' + id;
+          }
+        });
+
+        return false;
+    });
+});
 
 
 function generateRandomString (len) {
