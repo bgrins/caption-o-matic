@@ -21,6 +21,9 @@ window.staticshowdown = {
             model: this.Collections.Images,
             el: $(".file-listing")
         });
+        this.Views.canvasView = new canvasView({
+            el: $("#canvas-wrap")
+        });
     }
 };
 

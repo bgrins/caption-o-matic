@@ -27,3 +27,19 @@ h1,h2,h3,h4 {
 .file-dropper.has-file .empty-notice {
 	display: none;
 }
+#canvas-wrap {
+	border: 1px solid #333;
+	width: 600px;
+	margin: 0 auto;
+}
+#canvas-wrap .preview,
+#canvas-wrap .controls {
+	float: left;
+}
+#canvas-wrap .control {
+	margin-left: 20px;
+}
+#canvas-wrap .controls label {
+	display: block;
+	font-weight: bold;
+}

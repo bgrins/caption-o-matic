@@ -9,5 +9,5 @@ var ImageModel = Backbone.Model.extend({
 var ImageCollection = Backbone.Firebase.Collection.extend({
 	model: ImageModel,
 
-    firebase: new Firebase("https://chalupabatman.firebaseio.com/Images"),
+    firebase: new Firebase("https://chalupabatman.firebaseio.com/Images")
 });
