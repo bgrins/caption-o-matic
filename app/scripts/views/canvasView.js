@@ -50,7 +50,15 @@ var canvasView = Backbone.View.extend({
     },
 
     drawImage: function (img) {
-        this.context.drawImage(img, 0, 0);
+        var that = this;
+        var url = img.src;
+        var img = new Image;
+        img.onload = function() {
+            this.canvas.width = img.width;
+            this.canvas.height = img.height;
+            this.context.drawImage(img, 0, 0);
+        }.bind(this);
+        img.src = url;
     },
 
     initialize: function (options) {
@@ -68,13 +76,5 @@ var canvasView = Backbone.View.extend({
             textShadow: "10px 10px 0px #000",
             textAlign: 'center'
         });
-
-        var that = this;
-        var url = 'styles/aliens.jpg';
-        var img = new Image;
-        img.onload = function() {
-            that.drawImage(img);
-        };
-        img.src = url;
     }
 });

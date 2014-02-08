@@ -31,9 +31,14 @@ h1,h2,h3,h4 {
 	border: 1px solid #333;
 	width: 600px;
 	margin: 0 auto;
+  position: relative;
 }
-#canvas-wrap .preview,
 #canvas-wrap .controls {
+  position: absolute;
+  top: -90px;
+  right: 0;
+}
+#canvas-wrap .preview {
 	float: left;
 }
 #canvas-wrap .control {
