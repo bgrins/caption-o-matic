@@ -8,4 +8,4 @@ Setting up divshot: https://github.com/staticshowdown/lowdown/wiki/Hosting-Instr
 
     divshot push
 
-This will update the site at http://development.team88.divshot.io/
+This will update the site at http://development.ss14-team-88.divshot.io/
