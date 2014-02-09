@@ -19,24 +19,29 @@ var editorView = Backbone.View.extend({
             line = controls.data('line'),
             color = colorInput.spectrum("get").toHexString(),
             val = valueInput.val();
-            
+
         this.kineticView['drawLine' + lineId](val, color, font);
     },
 
     loadImage: function(img, textTop, textBottom) {
         this.kineticView.drawImage(img);
 
+        console.log(img, textTop, textBottom);
+
         // TODO: keep track of current default text and clear it if it is still
         // set when switching images
         var topTextInput = this.$("[data-line=1]").find(".line-box");
         if (textTop && !topTextInput.val()) {
-            topTextInput.val(textTop).trigger("change");
+            topTextInput.val(textTop);
         }
 
         var bottomTextInput = this.$("[data-line=2]").find(".line-box");
         if (textBottom && !bottomTextInput.val()) {
-            bottomTextInput.val(textBottom).trigger("change");
+            bottomTextInput.val(textBottom);
         }
+
+        topTextInput.trigger('change');
+        bottomTextInput.trigger('change');
     },
 
     initialize: function(options) {
