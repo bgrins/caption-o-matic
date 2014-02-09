@@ -42,10 +42,10 @@ var editorView = Backbone.View.extend({
         hash += this._slug;
 
         if (this._textTop) {
-            hash += "/" + encodeURIComponent(this._textTop).replace(/\%20/g, "");
+            hash += "/" + encodeURIComponent(this._textTop).replace(/\%20/g, " ");
         }
         if (this._textBottom) {
-            hash += "/" + encodeURIComponent(this._textBottom).replace(/\%20/g, "");
+            hash += "/" + encodeURIComponent(this._textBottom).replace(/\%20/g, " ");
         }
 
         this.$("#edit-this-caption").attr("href", hash);
