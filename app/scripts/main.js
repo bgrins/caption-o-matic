@@ -36,7 +36,7 @@ $(document).ready(function () {
     staticshowdown.init();
 
     function populateFromHash () {
-        var params = window.location.hash.substring(1).split('|');
+        var params = decodeURIComponent(window.location.hash.substring(1)).split('|');
         if (params.length === 3) {
             staticshowdown.Views.memeListing.selectMeme(params[0], params[1], params[2]);
         }
