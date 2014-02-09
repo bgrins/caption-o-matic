@@ -56,30 +56,67 @@ h1,h2,h3,h4 {
   width: 200px;
   padding: 10px;
   border: solid 1px #ccc;
+}
+
+
+.memes-wrapper {
+  border: solid 1px #ccc;
+  height: 150px;
+  position: relative;
+}
+.memes-wrapper .list-wrap {
+  overflow-x: hidden;
+}
+.memes-wrapper .list-nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 25px;
+  background: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 24px;
+  text-align: center;
+  line-height: 150px;
+  padding: 0 10px;
+  display: block;
+  z-index: 1;
+}
+.memes-wrapper .list-nav-back {
+  left: 0;
+  border-right: 1px solid #ddd;
+}
+.memes-wrapper .list-nav-next {
+  right: 0;
+  border-left: 1px solid #ddd;
+}
+.memes-wrapper .list-nav:hover {
+  background: rgba(200, 200, 200, 0.9);
 
 }
-.memes-wrapper {
-  float: left;
-  width: 200px;
-  padding: 10px;
-  border: solid 1px #ccc;
-}
 .meme-listing {
+  width: auto;
+  overflow: hidden;
+  padding: 10px 0;
   margin: 0;
-  padding: 10px;
-  max-height: 600px;
-  overflow-y: scroll;
 }
 .meme-listing li {
-  padding: 0;
-  margin: 10px;
   list-style: none;
-  width: 150px;
+  width: 125px;
+  height: 125px;
+  float: left;
+  margin: 0 10px;
   text-align: center;
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+.meme-listing li:hover {
+  box-shadow: 0 0 5px #111;
 }
 .meme-listing li img {
-  height: 100px;
-}
-.meme-listing li img:hover {
-  outline: solid 10px orange;
+  max-height: 100%;
+  max-width: 100%;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
 }

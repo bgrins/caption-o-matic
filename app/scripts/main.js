@@ -22,7 +22,7 @@ window.staticshowdown = {
         // });
 
         this.Views.memeListing = new memeListingView({
-            el: $(".meme-listing")
+            el: $(".memes-wrapper")
         });
         this.Views.editorView = new editorView({
             el: $("#preview-wrap")

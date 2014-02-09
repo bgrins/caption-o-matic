@@ -20,7 +20,6 @@ var editorView = Backbone.View.extend({
             font = fontInput.val(),
             color = colorInput.spectrum("get").toHexString();
 
-            console.log(val, color, font);
         this.kineticView['drawLine' + lineId](val, color, font);
     },
 
