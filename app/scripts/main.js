@@ -29,6 +29,7 @@ window.staticshowdown = {
         });
     }
 };
+vex.defaultOptions.className = 'vex-theme-flat-attack';
 
 $(document).ready(function () {
     'use strict';
@@ -62,31 +63,43 @@ $(document).ready(function () {
 });
 
 $(function () {
+    var loader = $("#loader-template").html();
     $("#post-to-imgur").click(function() {
+
+        function uploadToImgur (dataurl) {
+            dataurl = dataurl.replace(/.*,/, '');
+            var clientId = "de853a3d6821e1c";
+            var authorization = 'Client-ID ' + clientId;
+
+            $.ajax({
+              url: 'https://api.imgur.com/3/image',
+              method: 'POST',
+              headers: {
+                Authorization: authorization,
+                Accept: 'application/json'
+              },
+              data: {
+                image: dataurl,
+                type: 'base64'
+              },
+              success: showImgurUrl
+          });
+        }
+
+        function showImgurUrl (result) {
+            var url = "https://imgur.com/gallery/" + result.data.id;
+            vex.close();
+            vex.open({
+                content: 'Your image is now on imgur!<br /><a target="_blank" href="' + url + '">' + url + '</a>'
+            });
+        }
+
+        vex.open({
+            content: "We're uploading your image to imgur. <br /><div style='width:25px; margin: 0 auto;'>" + loader +"</div>",
+            overlayClosesOnClick: false
+        });
         window.staticshowdown.Views.editorView.kineticView.stage.toDataURL({
-            callback: function(dataurl) {
-                dataurl = dataurl.replace(/.*,/, '');
-
-                var clientId = "de853a3d6821e1c";
-                var authorization = 'Client-ID ' + clientId;
-
-                $.ajax({
-                  url: 'https://api.imgur.com/3/image',
-                  method: 'POST',
-                  headers: {
-                    Authorization: authorization,
-                    Accept: 'application/json'
-                  },
-                  data: {
-                    image: dataurl,
-                    type: 'base64'
-                  },
-                  success: function(result) {
-                    var id = result.data.id;
-                    window.location = 'https://imgur.com/gallery/' + id;
-                  }
-                });
-            }
+            callback: uploadToImgur
         });
         
 

@@ -13,8 +13,10 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css(.tmp) styles/main.css -->
-        <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="styles/spectrum.css">
+        <link rel="stylesheet" href="styles/vex.css">
+        <link rel="stylesheet" href="styles/vex-theme-flat-attack.css">
+        <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
@@ -90,13 +92,24 @@
         */
         </script>
 
+        <script id="loader-template" type="text/template">
+            <div class="bowlG">
+                <div class="bowl_ringG">
+                    <div class="ball_holderG">
+                        <div class="ballG">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </script>
+
         <!-- build:js scripts/vendor.js -->
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/backbone/backbone.js"></script>
         <script src="bower_components/backfire/backbone-firebase.js"></script>
         <script src="bower_components/spectrum/spectrum.js"></script>
-       
+        <script src="scripts/vendor/vex.combined.min.js"></script>
         <!-- endbuild -->
         <!-- build:js({.tmp,app}) scripts/main.js -->
         <script src="scripts/vendor/filereader.js"></script>
