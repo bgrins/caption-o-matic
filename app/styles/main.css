@@ -153,6 +153,22 @@ h1 small {
   padding: 5px;
 }
 
+#preview-wrap .controls .select-wrap {
+    border: 1px solid #ccc;
+    width: 120px;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #fafafa url("img/icon-select.png") no-repeat 90% 50%;
+}
+
+#preview-wrap .controls select {
+  width: 130px;
+}
+.chosen-container {
+  font-size: 14px;
+}
+
+
 #canvas-wrap {
   text-align: center;
   position: relative;
