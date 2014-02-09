@@ -4,23 +4,24 @@ var kineticView = Backbone.View.extend({
     },
 
     drawLine: function (options, layer) {
-        var opts = _.extend({
+        var basicOpts = {
             x: 0,
             y: 0,
+            width: this.stage.getWidth()
+        };
+        var textOpts = {
             fontFamily: "Impact",
             fontSize: 40,
             fontWeight: "bold",
             fill: "#fff",
-            lineHeight: "44",
             align: 'center',
-            width: this.stage.getWidth(),
             shadowColor: 'black',
             shadowBlur: 2,
             shadowOffset: {x:2, y:2},
-        }, options);
+        };
 
-        var text = new Kinetic.Text(opts);
-
+        var text = new Kinetic.Text(_.extend({}, basicOpts, textOpts, options));
+       
         layer.removeChildren();
         layer.add(text);
         this.stage.draw();
