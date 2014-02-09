@@ -2,7 +2,7 @@ var editorView = Backbone.View.extend({
 
     events: {
         'input textarea': 'updateLine',
-        'change input': 'updateLine',
+        'change textarea': 'updateLine',
         'change select': 'updateLine'
     },
 
