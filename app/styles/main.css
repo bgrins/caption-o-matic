@@ -200,7 +200,7 @@ a.btn:hover {
 }
 .memes-wrapper .list-nav:hover {
   background: rgba(200, 200, 200, 0.9);
-}*/
+}
 .memes-wrapper {
   position:absolute;
   left: 0;
@@ -208,6 +208,13 @@ a.btn:hover {
   bottom: 20px;
   width: 134px;
   overflow-y: scroll;
+}
+*/
+.memes-wrapper {
+  width: 550px;
+  margin: 0 auto;
+  border: 1px solid #bbb;
+  border-radius: 5px;
 }
 .meme-listing {
   margin: 0;
@@ -241,6 +248,35 @@ a.btn:hover {
 }
 
 
+
+
+
+
+.step-wrapper {
+  position: relative;
+  width: 800px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+.step-wrapper .step {
+  max-width: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  -webkit-transition: all ease-out .4s;
+}
+body .step-edit {
+  left: 200%;
+}
+body .step-select {
+  left: 0;
+}
+body.editing .step-select {
+  left: -200%;
+}
+body.editing .step-edit {
+  left: 0;
+}
 
 
 .vex-content {

@@ -24,6 +24,7 @@ var editorView = Backbone.View.extend({
     },
 
     loadImage: function(img, textTop, textBottom) {
+        $("body").addClass("editing");
         this.kineticView.drawImage(img);
 
         // TODO: keep track of current default text and clear it if it is still

@@ -31,54 +31,59 @@
           <h1><a href="/">Caption-o-matic</a></h1>
         </div>
 
-        <div class="memes-wrapper clearfix">
-          <!-- <a href="#" class="list-nav list-nav-back">&lt;</a> -->
-          <div class="list-wrap">
-              <ul class="meme-listing">
-              </ul>
-          </div>
-          <!-- <a href="#" class="list-nav list-nav-next">&gt;</a> -->
-          <!-- <div class="file-dropper">
-            <span class="empty-notice">Drop a file here to begin</span>
-          </div> -->
-        </div>
-
-        <div class="main-container">
-            <div id="preview-wrap">
-                <div id="canvas-wrap">
+        <div class="step-wrapper">
+            <div class="step step-select">
+                <div class="memes-wrapper clearfix">
+                  <!-- <a href="#" class="list-nav list-nav-back">&lt;</a> -->
+                  <div class="list-wrap">
+                      <ul class="meme-listing">
+                      </ul>
+                  </div>
+                  <!-- <a href="#" class="list-nav list-nav-next">&gt;</a> -->
+                  <!-- <div class="file-dropper">
+                    <span class="empty-notice">Drop a file here to begin</span>
+                  </div> -->
                 </div>
-                <div class="controls">
-                    <div class="control" data-line="1">
-                        <label for='line1'>Top Line:</label>
-                        <input type='text' id='line1' class='line-box' />
-                        <input class="text-color" value="white" />
-                        <select class="text-font">
-                          <option selected value="Impact">Impact</option>
-                          <option value="Arial">Arial</option>
-                          <option value="Comic Sans MS">Comic Sans</option>
-                        </select>
-                    </div>
-                    <div class="control" data-line="2">
-                        <label for='line2'>Bottom Line:</label>
-                        <input type='text' id='line2' class='line-box' />
-                        <input class="text-color" value="white" />
-                        <select class="text-font">
-                          <option selected value="Impact">Impact</option>
-                          <option value="Arial">Arial</option>
-                          <option value="Comic Sans MS">Comic Sans</option>
-                        </select>
-                    </div>
-                    <div>
-                      <a id="post-to-imgur" href="#" class="btn">
-                        Share On Imgur
-                      </a>
-                      <a class="btn" href="#doge|Cool|Such Hash">#doge|Cool|Such Hash</a>
-                    </div>
-
-                </div>
-                <br style="clear: both;" />
             </div>
+            <div class="step step-edit">
+                <div class="main-container">
+                    <div id="preview-wrap">
+                        <div id="canvas-wrap">
+                        </div>
+                        <div class="controls">
+                            <div class="control" data-line="1">
+                                <label for='line1'>Top Line:</label>
+                                <input type='text' id='line1' class='line-box' />
+                                <input class="text-color" value="white" />
+                                <select class="text-font">
+                                  <option selected value="Impact">Impact</option>
+                                  <option value="Arial">Arial</option>
+                                  <option value="Comic Sans MS">Comic Sans</option>
+                                </select>
+                            </div>
+                            <div class="control" data-line="2">
+                                <label for='line2'>Bottom Line:</label>
+                                <input type='text' id='line2' class='line-box' />
+                                <input class="text-color" value="white" />
+                                <select class="text-font">
+                                  <option selected value="Impact">Impact</option>
+                                  <option value="Arial">Arial</option>
+                                  <option value="Comic Sans MS">Comic Sans</option>
+                                </select>
+                            </div>
+                            <div>
+                              <a id="post-to-imgur" href="#" class="btn">
+                                Share On Imgur
+                              </a>
+                              <a class="btn" href="#doge|Cool|Such Hash">#doge|Cool|Such Hash</a>
+                              <a class="btn" href="#" onclick="javascript:$('body').removeClass('editing');">Back to Images</a>
+                            </div>
 
+                        </div>
+                        <br style="clear: both;" />
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
