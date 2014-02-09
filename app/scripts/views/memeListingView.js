@@ -1,10 +1,110 @@
+
+var memeCollection = new Backbone.Collection([
+  {
+    src: "images/memes/ancient-aliens.jpg",
+    description: "",
+    link: "",
+    defaultTextTop: "",
+    defaultTextBottom: "",
+    slug: ""
+  },
+  {
+    src: "images/memes/bad-luck-brian.jpg",
+    description: "",
+    link: "",
+    defaultTextTop: "",
+    defaultTextBottom: "",
+    slug: ""
+  },
+  {
+    src: "images/memes/conspiracy-keanu.jpg",
+    description: "",
+    link: "",
+    defaultTextTop: "",
+    defaultTextBottom: "",
+    slug: ""
+  },
+  {
+    src: "images/memes/doge.jpg",
+    description: "",
+    link: "",
+    defaultTextTop: "",
+    defaultTextBottom: "",
+    slug: ""
+  },
+  {
+    src: "images/memes/first-world-problems.jpg",
+    description: "",
+    link: "",
+    defaultTextTop: "",
+    defaultTextBottom: "",
+    slug: ""
+  },
+  {
+    src: "images/memes/futurama-fry.jpg",
+    description: "",
+    link: "",
+    defaultTextTop: "",
+    defaultTextBottom: "",
+    slug: ""
+  },
+  {
+    src: "images/memes/most-interesting.jpg",
+    description: "",
+    link: "",
+    defaultTextTop: "",
+    defaultTextBottom: "",
+    slug: ""
+  },
+  {
+    src: "images/memes/no-time-for-that.jpg",
+    description: "",
+    link: "",
+    defaultTextTop: "",
+    defaultTextBottom: "",
+    slug: ""
+  },
+  {
+    src: "images/memes/one-does-not-simply.jpg",
+    description: "",
+    link: "",
+    defaultTextTop: "",
+    defaultTextBottom: "",
+    slug: ""
+  },
+  {
+    src: "images/memes/scumbag-steve.jpg",
+    description: "",
+    link: "",
+    defaultTextTop: "",
+    defaultTextBottom: "",
+    slug: ""
+  },
+  {
+    src: "images/memes/y-u-no.jpg",
+    description: "",
+    link: "",
+    defaultTextTop: "",
+    defaultTextBottom: "",
+    slug: ""
+  }
+]);
+
 var memeListingView = Backbone.View.extend({
+    model: memeCollection,
     events: {
         'click img': "startEditing",
         'click .list-nav': 'navigateList'
     },
 
+    template: _.template('<% _.each(images, function(img) { %> <li><img src="<%= img.src %>" /><span><%= img.link %></span></li> <% }); %>'),
+
     render: function () {
+      this.$(".meme-listing").html(this.template({
+          images: this.model.toJSON()
+      }));
+
+      // this.$(".meme-listing").html("<li>hi</li>");
     },
 
     navigateList: function (ev) {
@@ -28,6 +128,7 @@ var memeListingView = Backbone.View.extend({
     },
 
     initialize: function (options) {
+        this.render();
         var width = 0;
         this.$ul = this.$("ul");
         this.$scrollable = this.$(".list-wrap");

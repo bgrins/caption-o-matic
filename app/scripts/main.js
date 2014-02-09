@@ -33,7 +33,15 @@ window.staticshowdown = {
 $(document).ready(function () {
     'use strict';
     staticshowdown.init();
-    $(".meme-listing img:first").click();
+    var firstImg = $(".meme-listing img")[0];
+    if (firstImg.complete) {
+        firstImg.click();
+    }
+    else {
+        firstImg.onload = function() {
+            firstImg.click();
+        }
+    }
     staticshowdown.Views.editorView.updateLineByNumber(1);
     staticshowdown.Views.editorView.updateLineByNumber(2);
 });
