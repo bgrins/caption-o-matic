@@ -72,6 +72,9 @@ h1 small {
   margin: 0 auto;
   text-align: center;
 }
+.main-container h2 {
+  margin-bottom: 15px;
+}
 
 .file-dropper {
 	border: 2px solid #bada55;
