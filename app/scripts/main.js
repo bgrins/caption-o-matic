@@ -29,9 +29,13 @@ window.staticshowdown = {
         });
 
         function populateFromHash () {
-            var params = window.location.hash.substring(1).split('|');
-            if (params.length === 3) {
-                staticshowdown.Views.memeListing.selectMeme(params[0], params[1], params[2]);
+            var params = window.location.hash.substring(1).split('/');
+            if (params.length > 0) {
+                staticshowdown.Views.memeListing.selectMeme(
+                     decodeURIComponent(params[0]),
+                     decodeURIComponent(params[1] || ""),
+                     decodeURIComponent(params[2] || "")
+                );
             }
         }
         $(window).on('hashchange', populateFromHash);
