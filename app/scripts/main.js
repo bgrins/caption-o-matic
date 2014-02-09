@@ -34,6 +34,8 @@ $(document).ready(function () {
     'use strict';
     staticshowdown.init();
     $(".meme-listing img:first").click();
+    staticshowdown.Views.editorView.updateLineByNumber(1);
+    staticshowdown.Views.editorView.updateLineByNumber(2);
 });
 
 $(function () {

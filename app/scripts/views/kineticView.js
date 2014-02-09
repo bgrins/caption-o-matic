@@ -15,12 +15,11 @@ var kineticView = Backbone.View.extend({
             align: 'center',
             width: this.stage.getWidth(),
             shadowColor: 'black',
-            shadowBlur: 0,
-            shadowOffset: {x:1,y:1}
+            shadowBlur: 2,
+            shadowOffset: {x:2, y:2},
         }, options);
 
-        var text = new Kinetic.Text(opts);;
-
+        var text = new Kinetic.Text(opts);
 
         layer.removeChildren();
         layer.add(text);
