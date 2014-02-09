@@ -33,17 +33,24 @@ window.staticshowdown = {
 $(document).ready(function () {
     'use strict';
     staticshowdown.init();
-    var firstImg = $(".meme-listing img")[0];
-    if (firstImg.complete) {
-        firstImg.click();
-    }
-    else {
-        firstImg.onload = function() {
+
+    if (!window.location.hash) {
+        var firstImg = $(".meme-listing img")[0];
+        if (firstImg.complete) {
             firstImg.click();
         }
+        else {
+            firstImg.onload = function() {
+                firstImg.click();
+            }
+        }
+        staticshowdown.Views.editorView.updateLineByNumber(1);
+        staticshowdown.Views.editorView.updateLineByNumber(2);
     }
-    staticshowdown.Views.editorView.updateLineByNumber(1);
-    staticshowdown.Views.editorView.updateLineByNumber(2);
+    else {
+        var params = window.location.hash.substring(1).split('|');
+        staticshowdown.Views.memeListing.selectMeme(params[0], params[1], params[2]);
+    }
 });
 
 $(function () {
@@ -51,7 +58,6 @@ $(function () {
         window.staticshowdown.Views.editorView.kineticView.stage.toDataURL({
             callback: function(dataurl) {
                 dataurl = dataurl.replace(/.*,/, '');
-    console.log(dataurl);
 
                 var clientId = "de853a3d6821e1c";
                 var authorization = 'Client-ID ' + clientId;

@@ -127,10 +127,25 @@ var memeListingView = Backbone.View.extend({
         this.$scrollable.animate({scrollLeft: dest });
     },
 
+    selectMeme: function (slug, textTop, textBottom) {
+        var model = memeCollection.findWhere({slug: slug});
+        if (model) {
+            this.loadMeme(model.toJSON(), textTop, textBottom);
+        }
+    },
+
     startEditing: function(e) {
       var cid = $(e.target).closest("[data-cid]").data("cid");
       var model = memeCollection.get(cid).toJSON();
-      window.staticshowdown.Views.editorView.loadImage(e.target, model.defaultTextTop, model.defaultTextBottom);
+      this.loadMeme(model);
+    },
+
+    loadMeme: function (meme, textTop, textBottom) {
+        var img = new Image;
+        img.onload = function() {
+            window.staticshowdown.Views.editorView.loadImage(img, (textTop || meme.defaultTextTop), (textBottom || meme.defaultTextBottom));
+        }
+        img.src = meme.src;
     },
 
     initialize: function (options) {

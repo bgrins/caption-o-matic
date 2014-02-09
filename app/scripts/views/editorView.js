@@ -10,16 +10,21 @@ var editorView = Backbone.View.extend({
         this.updateLineByNumber($(ev.target).closest("[data-line]").data("line"));
     },
 
-    updateLineByNumber: function(lineId) {
+    updateLineByNumber: function(lineId, value) {
         var controls = this.$("[data-line=" + lineId + "]"),
             valueInput = controls.find(".line-box"),
             fontInput = controls.find(".text-font"),
             colorInput = controls.find(".text-color"),
-            line = controls.data('line'),
-            val = valueInput.val(),
             font = fontInput.val(),
+            line = controls.data('line'),
             color = colorInput.spectrum("get").toHexString();
 
+        if (value) {
+            valueInput.val(value)
+        }
+
+        var val = valueInput.val();
+        console.log(value);
         this.kineticView['drawLine' + lineId](val, color, font);
     },
 
