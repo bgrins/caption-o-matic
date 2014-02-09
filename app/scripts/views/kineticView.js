@@ -11,7 +11,6 @@ var kineticView = Backbone.View.extend({
             fontSize: 40,
             fontWeight: "bold",
             fill: "#fff",
-            lineHeight: "44",
             align: 'center',
             width: this.stage.getWidth(),
             shadowColor: 'black',
