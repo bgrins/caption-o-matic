@@ -35,8 +35,11 @@ h1,h2,h3,h4 {
 }
 #preview-wrap .controls {
   position: absolute;
-  top: -90px;
-  right: 0;
+  top: -1px;
+  border: solid 1px;
+  padding: 10px;
+  width: 200px;
+  right: -250px;
 }
 #preview-wrap .canvas-wrap {
 	float: left;

@@ -11,16 +11,15 @@ window.staticshowdown = {
     init: function () {
         'use strict';
 
-        this.Collections.Images = new ImageCollection;
-
-        this.Views.fileUploader = new fileUploadView({
-            model: this.Collections.Images,
-            el: $(".file-dropper")
-        });
-        this.Views.fileListing = new fileListingView({
-            model: this.Collections.Images,
-            el: $(".file-listing")
-        });
+        // this.Collections.Images = new ImageCollection;
+        // this.Views.fileUploader = new fileUploadView({
+        //     model: this.Collections.Images,
+        //     el: $(".file-dropper")
+        // });
+        // this.Views.fileListing = new fileListingView({
+        //     model: this.Collections.Images,
+        //     el: $(".file-listing")
+        // });
 
         this.Views.memeListing = new memeListingView({
             el: $(".meme-listing")
@@ -38,7 +37,7 @@ $(document).ready(function () {
 
 $(function () {
     $("#post-to-imgur").click(function() {
-        var dataurl = window.staticshowdown.Views.canvasView.canvas.toDataURL().replace(/.*,/, '');
+        var dataurl = window.staticshowdown.Views.editorView.canvasView.canvas.toDataURL().replace(/.*,/, '');
         console.log(dataurl);
 
         var clientId = "de853a3d6821e1c";
