@@ -313,6 +313,7 @@ a.btn:hover {
   position: absolute;
   top: 0;
   -webkit-transition: all ease-out .4s;
+  transition: all ease-out .4s;
 }
 body .step-edit {
   left: 200%;

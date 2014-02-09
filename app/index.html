@@ -30,7 +30,7 @@
         <![endif]-->
         <div class="hero-unit">
           <h1><a href="/">Caption-o-matic</a></h1>
-          <a class="btn" id="back-to-images" href="#" onclick="javascript:$('body').removeClass('editing');">&lt; Back to Images</a>
+          <a class="btn" id="back-to-images" href="#" onclick="javascript:$('body').removeClass('editing');return false;">&lt; Back to Images</a>
         </div>
 
         <div class="step-wrapper">
@@ -119,17 +119,13 @@
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/backbone/backbone.js"></script>
-        <script src="bower_components/backfire/backbone-firebase.js"></script>
         <script src="bower_components/spectrum/spectrum.js"></script>
         <script src="scripts/vendor/chosen.jquery.min.js"></script>
         <script src="scripts/vendor/vex.combined.min.js"></script>
         <!-- endbuild -->
         <!-- build:js({.tmp,app}) scripts/main.js -->
-        <script src="scripts/vendor/filereader.js"></script>
         <script src="scripts/vendor/kinetic.js"></script>
-        <script src="scripts/vendor/CanvasText-0.4.js"></script>
 
-        <script src="scripts/models/imageModel.js"></script>
         <script src="scripts/views/memeListingView.js"></script>
         <script src="scripts/views/canvasView.js"></script>
         <script src="scripts/views/kineticView.js"></script>
