@@ -47,6 +47,7 @@ h1 small {
 .hero-unit {
   margin: 0;
   margin-top: 10px;
+  text-align: center;
 }
 
 .main-container {
