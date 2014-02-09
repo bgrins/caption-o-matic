@@ -36,7 +36,7 @@ var editorView = Backbone.View.extend({
     },
 
     buildHash: function() {
-        console.log("Building hash", this._slug, this._textTop, this._textBottom);
+        // console.log("Building hash", this._slug, this._textTop, this._textBottom);
 
         var hash = "#";
 
