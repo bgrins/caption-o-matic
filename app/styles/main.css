@@ -1,13 +1,48 @@
+html,body {margin: 0; padding: 0;}
 body {
     background: #fafafa;
     font-family: 'Open Sans', Verdana;
     font-weight: 300;
+  border-top: solid 10px #33F;
 }
 
 h1,h2,h3,h4 {
 	font-family: 'Open Sans Condensed', Arial;
 }
 
+h1 {
+  margin: 0;
+  padding: 0;
+  margin-top: -20px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+h1 a:visited,
+h1 a:active
+h1 a {
+  color: #FFF;
+}
+
+h1 a:hover {
+  top: 3px;
+}
+
+h1 a {
+  transition: top .2s;
+  -webkit-transition: top .2s;
+  position:relative;
+  text-decoration: none;
+  display: inline-block;
+  background: #33F;
+  font-family: Impact;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px #000;
+  padding: 3px 8px;
+}
+h1 small {
+
+}
 .hero-unit {
   margin: 0;
   margin-top: 10px;
