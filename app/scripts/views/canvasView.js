@@ -29,15 +29,12 @@ var canvasView = Backbone.View.extend({
     },
 
     drawText: function(line1, line2) {
-        
         if (line1) {
             this.drawLine1(line1);
         }
-
         if (line2) {
             this.drawLine2(line2);
         }
-        
     },
 
     drawImage: function (img) {
