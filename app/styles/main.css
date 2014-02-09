@@ -236,7 +236,7 @@ a.btn:hover {
   width: 125px;
   height: 125px;
   float: left;
-  margin: 2px 5px;
+  margin: 5px;
   padding: 0;
   text-align: center;
   background: #eee;
@@ -247,8 +247,8 @@ a.btn:hover {
   box-shadow: 0 0 5px #111;
 }
 .meme-listing li img {
-  max-height: 95%;
-  max-width: 95%;
+  max-height: 100%;
+  max-width: 100%;
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);

@@ -97,7 +97,7 @@ memeCollection.forEach(function(m) {
 var memeListingView = Backbone.View.extend({
     model: memeCollection,
     events: {
-        'click img': "startEditing",
+        'click li': "startEditing",
         'click .list-nav': 'navigateList'
     },
 
