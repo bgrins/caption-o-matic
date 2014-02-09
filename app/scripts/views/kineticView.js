@@ -27,19 +27,21 @@ var kineticView = Backbone.View.extend({
         this.stage.draw();
     },
 
-    drawLine1: function(val, color) {
+    drawLine1: function(val, color, font) {
         this.drawLine({
             text: val.toUpperCase(),
             y: 40,
-            fill: color
+            fill: color,
+            fontFamily: font
         }, this.text1Layer);
     },
 
-    drawLine2: function(val, color) {
+    drawLine2: function(val, color, font) {
         this.drawLine({
             text: val.toUpperCase(),
             y: this.stage.getHeight() - 50,
-            fill: color
+            fill: color,
+            fontFamily: font
         }, this.text2Layer);
     },
 

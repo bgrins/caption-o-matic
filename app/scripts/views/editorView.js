@@ -1,19 +1,22 @@
 var editorView = Backbone.View.extend({
 
     events: {
-        'input input.line-box': 'updateLine',
-        'change input.text-color': 'updateLine'
+        'input input': 'updateLine',
+        'change input': 'updateLine',
+        'change select': 'updateLine'
     },
 
     updateLine: function (ev) {
         var controls = $(ev.target).closest("[data-line]"),
             valueInput = controls.find(".line-box"),
+            fontInput = controls.find(".text-font"),
             colorInput = controls.find(".text-color"),
             line = controls.data('line'),
             val = valueInput.val(),
+            font = fontInput.val(),
             color = colorInput.spectrum("get").toHexString();
 
-        this.kineticView['drawLine' + line](val, color);
+        this.kineticView['drawLine' + line](val, color, font);
     },
 
     loadImage: function(img) {
