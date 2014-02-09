@@ -1,8 +1,14 @@
 html,body {margin: 0; padding: 0;}
+html {
+  height: 100%;
+}
 body {
-    background: #fafafa;
-    font-family: 'Open Sans', Verdana;
-    font-weight: 300;
+  min-height: 100%;
+  background: url(../images/sos.png) #fafafa;
+  font-family: 'Open Sans', Verdana;
+  font-weight: 300;
+  position: relative;
+  min-width: 960px;
   border-top: solid 10px #5E77C7;
 }
 .clearfix:before,
@@ -79,13 +85,14 @@ h1 small {
 }
 #preview-wrap {
 	width: 700px;
-  min-height: 600px;
+  /*min-height: 600px;
+  height: 700px;*/
 	margin: 0 auto;
   position: relative;
   vertical-align: middle;
-  background: #ddf;
+  /*background: #ddf;*/
 }
-#preview-wrap .controls:before {
+/*#preview-wrap .controls:before {
   content: "";
   display: block;
   position:absolute;
@@ -97,19 +104,32 @@ h1 small {
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
   border-left: 20px solid #ddf;
-}
+}*/
 #preview-wrap .controls {
   background: #eee;
   position: absolute;
   top: 20px;
   bottom: 20px;
   padding: 10px;
-  width: 280px;
-  right: -300px;
+  width: 200px;
+  right: -220px;
 }
 
 #canvas-wrap {
   text-align: center;
+  position: relative;
+  /*top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);*/
+  /*position: relative;*/
+}
+
+.kineticjs-content {
+  /*display: table;*/
+  /**/
 }
 #preview-wrap .control {
 	margin-left: 20px;
@@ -181,6 +201,14 @@ a.btn:hover {
 .memes-wrapper .list-nav:hover {
   background: rgba(200, 200, 200, 0.9);
 }*/
+.memes-wrapper {
+  position:absolute;
+  left: 0;
+  top: 40px;
+  bottom: 20px;
+  width: 134px;
+  overflow-y: scroll;
+}
 .meme-listing {
   margin: 0;
   padding: 0;
@@ -208,6 +236,10 @@ a.btn:hover {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+.meme-listing li span {
+  display: none;
+}
+
 
 
 
