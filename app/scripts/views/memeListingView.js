@@ -87,6 +87,46 @@ var memeCollection = new Backbone.Collection([
     defaultTextTop: "",
     defaultTextBottom: "Y U NO",
     slug: "y-u-no"
+  },
+  {
+    src: "images/memes/condescending-wonka.jpg",
+    description: "Condescending Wonka",
+    link: "",
+    defaultTextTop: "",
+    defaultTextBottom: "",
+    slug: "condescending-wonka"
+  },
+  {
+    src: "images/memes/success-kid.jpg",
+    description: "Sucess Kid",
+    link: "",
+    defaultTextTop: "",
+    defaultTextBottom: "",
+    slug: "sucess-kid"
+  },
+  {
+    src: "images/memes/picard-wtf.jpg",
+    description: "Picard WTF",
+    link: "",
+    defaultTextTop: "",
+    defaultTextBottom: "",
+    slug: "picard-wtf"
+  },
+  {
+    src: "images/memes/confession-bear.jpg",
+    description: "Confession Bear",
+    link: "",
+    defaultTextTop: "",
+    defaultTextBottom: "",
+    slug: "confession-bear"
+  },
+  {
+    src: "images/memes/insanity-wolf.jpg",
+    description: "Insanity Wolf",
+    link: "",
+    defaultTextTop: "",
+    defaultTextBottom: "",
+    slug: "insanity-wolf"
   }
 ]);
 
