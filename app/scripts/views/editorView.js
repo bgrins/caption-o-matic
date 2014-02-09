@@ -29,6 +29,10 @@ var editorView = Backbone.View.extend({
 
     initialize: function(options) {
 
+        // TODO:
+        // * Set tab order to navigate between inputs
+        // * Allow editing of other properties (like font size)
+        // * Allow adding / removing of extra text layers
         this.kineticView = new kineticView({
             el: this.$el.find('#canvas-wrap')
         });

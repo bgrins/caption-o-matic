@@ -65,7 +65,7 @@ h1,h2,h3,h4 {
   position: relative;
 }
 .memes-wrapper .list-wrap {
-  overflow-x: hidden;
+  overflow-x: scroll;
 }
 .memes-wrapper .list-nav {
   position: absolute;
@@ -119,4 +119,5 @@ h1,h2,h3,h4 {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
