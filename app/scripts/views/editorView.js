@@ -1,7 +1,7 @@
 var editorView = Backbone.View.extend({
 
     events: {
-        'blur input.line-box': 'updateLine'
+        'input input.line-box': 'updateLine'
     },
 
     updateLine: function (ev) {
