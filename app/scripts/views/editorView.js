@@ -1,26 +1,28 @@
 var editorView = Backbone.View.extend({
 
-	events: {
+    events: {
         'blur input.line-box': 'updateLine'
-	},
+    },
 
-	updateLine: function (ev) {
+    updateLine: function (ev) {
         var input = $(ev.target),
             line = input.data('line'),
             val = input.val();
 
-        this.canvasView['drawLine' + line](val);
-	},
+        this.kineticView['drawLine' + line](val);
+    },
 
-	loadImage: function(img) {
-		this.canvasView.drawImage(img);
-	},
+    loadImage: function(img) {
+        this.kineticView.drawImage(img);
+    },
 
-	initialize: function(options) {
+    initialize: function(options) {
 
-
-		this.canvasView = new canvasView({
-			el: this.$el.find('.canvas-wrap')
-		});
-	}
+        this.kineticView = new kineticView({
+            el: this.$el.find('#canvas-wrap')
+        });
+        /*this.canvasView = new canvasView({
+            el: this.$el.find('.canvas-wrap')
+        });*/
+    }
 });
