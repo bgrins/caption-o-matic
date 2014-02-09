@@ -67,8 +67,8 @@ var memeCollection = new Backbone.Collection([
   {
     src: "images/memes/one-does-not-simply.jpg",
     description: "One does not simply",
-    link: "http://knowyourmeme.com/memes/one-does-not-simply",
-    defaultTextTop: "",
+    link: "http://knowyourmeme.com/memes/one-does-not-simply-walk-into-mordor",
+    defaultTextTop: "One does not simply",
     defaultTextBottom: "",
     slug: "one-does-not-simply"
   },
