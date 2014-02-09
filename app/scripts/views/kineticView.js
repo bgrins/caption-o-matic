@@ -38,20 +38,19 @@ var kineticView = Backbone.View.extend({
     drawImage: function (img) {
 
         var layer = new Kinetic.Layer();
-        var i = new Image;
-        i.onload = function() {
-            var ki = new Kinetic.Image({
-                x: 0,
-                y: 0,
-                width: i.width,
-                height: i.height,
-                image: i
-            });
+        this.stage.setWidth(img.naturalWidth);
+        this.stage.setHeight(img.naturalHeight);
 
-            layer.add(ki);
-            this.stage.add(layer);
-        }.bind(this);
-        i.src = img.src;
+        var ki = new Kinetic.Image({
+            x: 0,
+            y: 0,
+            width: img.naturalWidth,
+            height: img.naturalHeight,
+            image: img
+        });
+
+        layer.add(ki);
+        this.stage.add(layer);
     },
 
     initialize: function (options) {
