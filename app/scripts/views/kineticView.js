@@ -51,7 +51,7 @@ var kineticView = Backbone.View.extend({
             image: img
         });
 
-        this.imageLayer.clear();
+        this.imageLayer.removeChildren();
         this.imageLayer.add(ki);
         this.addLayers();
     },
@@ -70,7 +70,11 @@ var kineticView = Backbone.View.extend({
             height: 400
         });
         this.imageLayer = new Kinetic.Layer();
-        this.text1Layer = new Kinetic.Layer();
-        this.text2Layer = new Kinetic.Layer();
+        this.text1Layer = new Kinetic.Layer({
+            draggable: true
+        });
+        this.text2Layer = new Kinetic.Layer({
+            draggable: true
+        });
     }
 });
