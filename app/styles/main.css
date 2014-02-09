@@ -19,7 +19,7 @@ h1 {
 }
 
 h1 a:visited,
-h1 a:active
+h1 a:active,
 h1 a {
   color: #FFF;
 }
@@ -49,6 +49,10 @@ h1 small {
   margin-top: 10px;
 }
 
+.main-container {
+  margin: 0 auto;
+}
+
 .file-dropper {
 	border: 2px solid #bada55;
 	border-radius: 5px;
@@ -64,7 +68,8 @@ h1 small {
 	display: none;
 }
 #preview-wrap {
-	width: 800px;
+	width: 700px;
+  min-height: 600px;
 	margin: 0 auto;
   position: relative;
   vertical-align: middle;
@@ -89,8 +94,8 @@ h1 small {
   top: 20px;
   bottom: 20px;
   padding: 10px;
-  width: 200px;
-  right: -220px;
+  width: 280px;
+  right: -300px;
 }
 
 #canvas-wrap {
@@ -103,24 +108,26 @@ h1 small {
 	display: block;
 	font-weight: bold;
 }
-.listing-wrapper {
-  float: right;
-  width: 200px;
+
+#preview-wrap .memes-wrapper {
+  background: #eee;
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
   padding: 10px;
-  border: solid 1px #ccc;
+  width: 280px;
+  left: -300px;
+  overflow-y: scroll;
 }
 
-
+/*
 .memes-wrapper {
   border: solid 1px #ccc;
   border-top: none;
-  height: 150px;
+  float: left;
   position: relative;
-}
-.memes-wrapper .list-wrap {
-  overflow-x: scroll;
-}
-.memes-wrapper .list-nav {
+}*/
+/*.memes-wrapper .list-nav {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -144,20 +151,18 @@ h1 small {
 }
 .memes-wrapper .list-nav:hover {
   background: rgba(200, 200, 200, 0.9);
-
-}
+}*/
 .meme-listing {
-  width: auto;
-  overflow: hidden;
-  padding: 10px 0;
   margin: 0;
+  padding: 0;
 }
 .meme-listing li {
   list-style: none;
   width: 125px;
   height: 125px;
   float: left;
-  margin: 0 10px;
+  margin: 2px 5px;
+  padding: 0;
   text-align: center;
   background: #eee;
   border: 1px solid #ccc;
