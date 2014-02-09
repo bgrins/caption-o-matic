@@ -151,12 +151,12 @@ var memeListingView = Backbone.View.extend({
     initialize: function (options) {
         this.render();
         var width = 0;
-        this.$ul = this.$("ul");
-        this.$scrollable = this.$(".list-wrap");
-        var li = this.$el.find("ul li").each(function() {
-            width += $(this).outerWidth(true);
-        });
+        // this.$ul = this.$("ul");
+        // this.$scrollable = this.$(".list-wrap");
+        // var li = this.$el.find("ul li").each(function() {
+        //     width += $(this).outerWidth(true);
+        // });
 
-        this.$ul.width(width);
+        // this.$ul.width(width);
     }
 });
