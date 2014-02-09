@@ -1,3 +1,7 @@
+# To install dependancies
+
+    bower install
+
 # To build:
 
     grunt build

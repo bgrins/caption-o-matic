@@ -5,11 +5,11 @@ var kineticView = Backbone.View.extend({
 
     drawLine: function (val, y, layer) {
         var opts = {
-            fontFamily: "Open Sans",
-            fontSize: 32,
-            fontWeight: "300",
+            fontFamily: "Impact",
+            fontSize: 40,
+            fontWeight: "bold",
             fill: "#fff",
-            lineHeight: "36",
+            lineHeight: "44",
             align: 'center',
             width: this.stage.getWidth(),
             shadowColor: 'black',
@@ -27,15 +27,16 @@ var kineticView = Backbone.View.extend({
         layer.removeChildren();
         console.log("Clearing layer", val, layer)
         layer.add(text);
-        this.addLayers();
+        // this.addLayers();
+        this.stage.draw();
     },
 
     drawLine1: function(val) {
-        this.drawLine(val, 50, this.text1Layer);
+        this.drawLine(val.toUpperCase(), 50, this.text1Layer);
     },
 
     drawLine2: function(val) {
-        this.drawLine(val, 350, this.text2Layer);
+        this.drawLine(val.toUpperCase(), 350, this.text2Layer);
     },
 
     drawImage: function (img) {
@@ -53,7 +54,7 @@ var kineticView = Backbone.View.extend({
 
         this.imageLayer.removeChildren();
         this.imageLayer.add(ki);
-        this.addLayers();
+        this.stage.draw();
     },
 
     addLayers: function() {
@@ -76,5 +77,6 @@ var kineticView = Backbone.View.extend({
         this.text2Layer = new Kinetic.Layer({
             draggable: true
         });
+        this.addLayers();
     }
 });
