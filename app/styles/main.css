@@ -136,6 +136,22 @@ h1 small {
   width: 200px;
   left: -210px;
 }
+#preview-wrap .control.first {
+  border-bottom: 1px solid #bbb;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+
+#preview-wrap .controls textarea {
+  resize: none;
+  border: 1px solid #bbb;
+  border-radius: 2px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+  margin: 0;
+  width: 180px;
+  padding: 5px;
+}
 
 #canvas-wrap {
   text-align: center;
@@ -153,14 +169,6 @@ h1 small {
   /*display: table;*/
   /**/
 }
-#preview-wrap .control {
-	margin-left: 20px;
-}
-#preview-wrap .controls label {
-	display: block;
-	font-weight: bold;
-}
-
 #preview-wrap .memes-wrapper {
   background: #eee;
   position: absolute;
