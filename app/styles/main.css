@@ -3,7 +3,7 @@ body {
     background: #fafafa;
     font-family: 'Open Sans', Verdana;
     font-weight: 300;
-  border-top: solid 10px #33F;
+  border-top: solid 10px #5E77C7;
 }
 
 h1,h2,h3,h4 {
@@ -34,7 +34,7 @@ h1 a {
   position:relative;
   text-decoration: none;
   display: inline-block;
-  background: #33F;
+  background: #5E77C7;
   font-family: Impact;
   text-transform: uppercase;
   text-shadow: 1px 1px 2px #000;
@@ -120,6 +120,25 @@ h1 small {
   overflow-y: scroll;
 }
 
+a.btn {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #5E77C7;
+  color: #eee;
+  border-radius: 3px;
+  text-decoration: none;
+  margin: 5px 0;
+  -webkit-transition: all linear .1s;
+  -moz-transition: all linear .1s;
+  -ms-transition: all linear .1s;
+  transition: all linear .2s;
+  box-shadow: inset 0px -3px 7px rgba(0, 0, 0, 0.3);
+}
+a.btn:hover {
+  color: #fff;
+  background: #6480DB;
+  box-shadow: inset 0px 3px 7px rgba(0, 0, 0, 0.3);
+}
 /*
 .memes-wrapper {
   border: solid 1px #ccc;
