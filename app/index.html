@@ -14,6 +14,7 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="bower_components/spectrum/spectrum.css">
         <!-- endbuild -->
         <!-- build:js scripts/vendor/modernizr.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
@@ -55,13 +56,15 @@
             <div id="canvas-wrap">
             </div>
             <div class="controls">
-                <div class="control">
+                <div class="control" data-line="1">
                     <label for='line1'>Top Line:</label>
-                    <input type='text' id='line1' class='line-box' data-line="1" />
+                    <input type='text' id='line1' class='line-box' />
+                    <input class="text-color" value="white" />
                 </div>
-                <div class="control">
+                <div class="control" data-line="2">
                     <label for='line2'>Bottom Line:</label>
-                    <input type='text' id='line2' class='line-box' data-line="2" />
+                    <input type='text' id='line2' class='line-box' />
+                    <input class="text-color" value="white" />
                 </div>
             </div>
             <br style="clear: both;" />
@@ -91,6 +94,7 @@
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/backbone/backbone.js"></script>
         <script src="bower_components/backfire/backbone-firebase.js"></script>
+        <script src="bower_components/spectrum/spectrum.js"></script>
        
         <!-- endbuild -->
         <!-- build:js({.tmp,app}) scripts/main.js -->

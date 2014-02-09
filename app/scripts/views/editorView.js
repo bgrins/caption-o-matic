@@ -1,15 +1,19 @@
 var editorView = Backbone.View.extend({
 
     events: {
-        'input input.line-box': 'updateLine'
+        'input input.line-box': 'updateLine',
+        'change input.text-color': 'updateLine'
     },
 
     updateLine: function (ev) {
-        var input = $(ev.target),
-            line = input.data('line'),
-            val = input.val();
+        var controls = $(ev.target).closest("[data-line]"),
+            valueInput = controls.find(".line-box"),
+            colorInput = controls.find(".text-color"),
+            line = controls.data('line'),
+            val = valueInput.val(),
+            color = colorInput.spectrum("get").toHexString();
 
-        this.kineticView['drawLine' + line](val);
+        this.kineticView['drawLine' + line](val, color);
     },
 
     loadImage: function(img) {
@@ -21,6 +25,13 @@ var editorView = Backbone.View.extend({
         this.kineticView = new kineticView({
             el: this.$el.find('#canvas-wrap')
         });
+
+        this.$(".text-color").spectrum({
+            showPaletteOnly: true,
+            palette: [
+                ["red", "green", "white", "black"]
+            ]
+        })
         /*this.canvasView = new canvasView({
             el: this.$el.find('.canvas-wrap')
         });*/

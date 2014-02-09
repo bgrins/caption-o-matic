@@ -33,6 +33,7 @@ window.staticshowdown = {
 $(document).ready(function () {
     'use strict';
     staticshowdown.init();
+    $(".meme-listing img:first").click();
 });
 
 $(function () {
