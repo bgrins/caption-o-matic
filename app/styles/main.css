@@ -65,6 +65,7 @@ h1 small {
   margin: 0;
   margin-top: 10px;
   text-align: center;
+  position: relative;
 }
 
 .main-container {
@@ -109,6 +110,16 @@ h1 small {
   border-bottom: 20px solid transparent;
   border-left: 20px solid #ddf;
 }*/
+
+.editing #back-to-images {
+  display: block;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+#back-to-images {
+  display: none;
+}
 #preview-wrap .final-step {
   background: #eee;
   position: absolute;
