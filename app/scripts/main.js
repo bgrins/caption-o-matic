@@ -101,8 +101,6 @@ $(function () {
         window.staticshowdown.Views.editorView.kineticView.stage.toDataURL({
             callback: uploadToImgur
         });
-        
-
         return false;
     });
 });
