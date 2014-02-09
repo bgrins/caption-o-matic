@@ -26,8 +26,6 @@ var editorView = Backbone.View.extend({
     loadImage: function(img, textTop, textBottom) {
         this.kineticView.drawImage(img);
 
-        console.log(img, textTop, textBottom);
-
         // TODO: keep track of current default text and clear it if it is still
         // set when switching images
         var topTextInput = this.$("[data-line=1]").find(".line-box");
