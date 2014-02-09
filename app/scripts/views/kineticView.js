@@ -20,6 +20,11 @@ var kineticView = Backbone.View.extend({
 
         var text = new Kinetic.Text(opts);
 
+        if (options.y === 'bottom') {
+            var newY = this.stage.getHeight() - text.getHeight();
+            text.attrs.y = newY;
+        }
+
         layer.removeChildren();
         layer.add(text);
         this.stage.draw();
@@ -37,7 +42,7 @@ var kineticView = Backbone.View.extend({
     drawLine2: function(val, color, font) {
         this.drawLine({
             text: val.toUpperCase(),
-            y: this.stage.getHeight() - 50,
+            y: 'bottom',
             fill: color,
             fontFamily: font
         }, this.text2Layer);
