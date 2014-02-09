@@ -6,6 +6,10 @@ var editorView = Backbone.View.extend({
         'change select': 'updateLine'
     },
 
+    _slug: "",
+    _textTop: "",
+    textBottom: "",
+
     updateLine: function (ev) {
         this.updateLineByNumber($(ev.target).closest("[data-line]").data("line"));
     },
@@ -20,11 +24,39 @@ var editorView = Backbone.View.extend({
             color = colorInput.spectrum("get").toHexString(),
             val = valueInput.val();
 
+        if (lineId == "1") {
+            this._textTop = val;
+        } else {
+            this._textBottom = val;
+        }
+
         this.kineticView['drawLine' + lineId](val, color, font);
+        this.buildHash();
     },
 
-    loadImage: function(img, textTop, textBottom) {
+    buildHash: function() {
+        console.log("Building hash", this._slug, this._textTop, this._textBottom);
+
+        var hash = "#";
+
+        hash += this._slug;
+
+        if (this._textTop) {
+            hash += "|" + encodeURIComponent(this._textTop);
+        }
+        if (this._textBottom) {
+            hash += "|" + encodeURIComponent(this._textBottom);
+        }
+
+        this.$("#edit-this-caption").attr("href", hash);
+    },
+
+
+    loadImage: function(img, textTop, textBottom, slug) {
+        console.log(textTop, textBottom, slug)
+        this._slug = slug;
         this.kineticView.drawImage(img);
+        this.buildHash();
 
         // TODO: keep track of current default text and clear it if it is still
         // set when switching images
