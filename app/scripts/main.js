@@ -27,6 +27,17 @@ window.staticshowdown = {
         this.Views.editorView = new editorView({
             el: $("#preview-wrap")
         });
+
+        function populateFromHash () {
+            var params = window.location.hash.substring(1).split('|');
+            if (params.length === 3) {
+                staticshowdown.Views.memeListing.selectMeme(params[0], params[1], params[2]);
+            }
+        }
+        $(window).on('hashchange', populateFromHash);
+        if(window.location.hash) {
+            populateFromHash();
+        }
     }
 };
 vex.defaultOptions.className = 'vex-theme-flat-attack';
@@ -34,7 +45,7 @@ vex.defaultOptions.className = 'vex-theme-flat-attack';
 $(document).ready(function () {
     'use strict';
     staticshowdown.init();
-
+/*
     function populateFromHash () {
         var params = window.location.hash.substring(1).split('/');
         if (params.length > 0) {
@@ -64,6 +75,7 @@ $(document).ready(function () {
     else {
         populateFromHash();
     }
+*/
 });
 
 $(function () {

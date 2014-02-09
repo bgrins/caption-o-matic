@@ -51,12 +51,12 @@ var editorView = Backbone.View.extend({
         this.$("#edit-this-caption").attr("href", hash);
     },
 
-
     loadImage: function(img, textTop, textBottom, slug) {
         console.log(textTop, textBottom, slug)
         this._slug = slug;
         this.kineticView.drawImage(img);
         this.buildHash();
+        $("body").addClass("editing");
 
         // TODO: keep track of current default text and clear it if it is still
         // set when switching images
