@@ -46,6 +46,15 @@ $(document).ready(function () {
     'use strict';
     staticshowdown.init();
 /*
+    function populateFromHash () {
+        var params = decodeURIComponent(window.location.hash.substring(1)).split('|');
+        if (params.length === 3) {
+            staticshowdown.Views.memeListing.selectMeme(params[0], params[1], params[2]);
+        }
+    };
+
+    $(window).on('hashchange', populateFromHash);
+
     if (!window.location.hash) {
         var firstImg = $(".meme-listing img")[0];
         if (firstImg.complete) {

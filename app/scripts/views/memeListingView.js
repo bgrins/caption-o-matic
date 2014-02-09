@@ -142,8 +142,9 @@ var memeListingView = Backbone.View.extend({
 
     loadMeme: function (meme, textTop, textBottom) {
         var img = new Image;
+        console.log(meme, meme.slug);
         img.onload = function() {
-            window.staticshowdown.Views.editorView.loadImage(img, (textTop || meme.defaultTextTop), (textBottom || meme.defaultTextBottom));
+            window.staticshowdown.Views.editorView.loadImage(img, (textTop || meme.defaultTextTop), (textBottom || meme.defaultTextBottom), meme.slug);
         }
         img.src = meme.src;
     },

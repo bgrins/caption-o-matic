@@ -51,6 +51,13 @@
                         <div id="canvas-wrap">
                         </div>
                         <div class="controls">
+                            <div>
+                              <a id="post-to-imgur" href="#" class="btn">
+                                Share On Imgur
+                              </a><br />
+                              <a id="edit-this-caption" href="#">Share edit link</a>
+                              <a class="btn" href="#" onclick="javascript:$('body').removeClass('editing');">Back to Images</a>
+                            </div>
                             <div class="control" data-line="1">
                                 <label for='line1'>Top Line:</label>
                                 <input type='text' id='line1' class='line-box' />
@@ -71,14 +78,6 @@
                                   <option value="Comic Sans MS">Comic Sans</option>
                                 </select>
                             </div>
-                            <div>
-                              <a id="post-to-imgur" href="#" class="btn">
-                                Share On Imgur
-                              </a>
-                              <a class="btn" href="#doge|Cool|Such Hash">#doge|Cool|Such Hash</a>
-                              <a class="btn" href="#" onclick="javascript:$('body').removeClass('editing');">Back to Images</a>
-                            </div>
-
                         </div>
                         <br style="clear: both;" />
                     </div>
@@ -86,16 +85,13 @@
             </div>
         </div>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
-        /*
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
             e=o.createElement(i);r=o.getElementsByTagName(i)[0];
             e.src='//www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        */
+            ga('create','UA-8259845-7');ga('send','pageview');
         </script>
 
         <script id="loader-template" type="text/template">
@@ -123,8 +119,6 @@
         <script src="scripts/vendor/CanvasText-0.4.js"></script>
 
         <script src="scripts/models/imageModel.js"></script>
-        <script src="scripts/views/fileUploadView.js"></script>
-        <script src="scripts/views/fileListingView.js"></script>
         <script src="scripts/views/memeListingView.js"></script>
         <script src="scripts/views/canvasView.js"></script>
         <script src="scripts/views/kineticView.js"></script>
