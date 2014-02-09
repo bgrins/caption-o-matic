@@ -1,94 +1,98 @@
 
 var memeCollection = new Backbone.Collection([
   {
-    src: "images/memes/ancient-aliens.jpg",
-    description: "",
-    link: "",
+    src: "images/memes/conspiracy-keanu.jpg",
+    description: "Conspiracy Keanu",
+    link: "http://knowyourmeme.com/memes/conspiracy-keanu",
     defaultTextTop: "",
     defaultTextBottom: "",
-    slug: ""
+    slug: "conspiracy-keanu"
+  },
+  {
+    src: "images/memes/ancient-aliens.jpg",
+    description: "Ancient Aliens",
+    link: "http://knowyourmeme.com/memes/ancient-aliens",
+    defaultTextTop: "",
+    defaultTextBottom: "",
+    slug: "ancient-aliens"
   },
   {
     src: "images/memes/bad-luck-brian.jpg",
-    description: "",
-    link: "",
+    description: "Bad Luck Brian",
+    link: "http://knowyourmeme.com/memes/bad-luck-brian",
     defaultTextTop: "",
     defaultTextBottom: "",
-    slug: ""
-  },
-  {
-    src: "images/memes/conspiracy-keanu.jpg",
-    description: "",
-    link: "",
-    defaultTextTop: "",
-    defaultTextBottom: "",
-    slug: ""
+    slug: "bad-luck-brian"
   },
   {
     src: "images/memes/doge.jpg",
-    description: "",
-    link: "",
+    description: "Doge",
+    link: "http://knowyourmeme.com/memes/doge",
     defaultTextTop: "",
     defaultTextBottom: "",
-    slug: ""
+    slug: "doge"
   },
   {
     src: "images/memes/first-world-problems.jpg",
-    description: "",
-    link: "",
+    description: "First world problems",
+    link: "http://knowyourmeme.com/memes/first-world-problems",
     defaultTextTop: "",
     defaultTextBottom: "",
-    slug: ""
+    slug: "first-world-problems"
   },
   {
     src: "images/memes/futurama-fry.jpg",
-    description: "",
-    link: "",
-    defaultTextTop: "",
+    description: "Futurama Fry",
+    link: "http://knowyourmeme.com/memes/futurama-fry-not-sure-if",
+    defaultTextTop: "Not sure if",
     defaultTextBottom: "",
-    slug: ""
+    slug: "futurama-fry"
   },
   {
     src: "images/memes/most-interesting.jpg",
-    description: "",
-    link: "",
+    description: "Most interesting man in the world",
+    link: "http://knowyourmeme.com/memes/the-most-interesting-man-in-the-world",
     defaultTextTop: "",
     defaultTextBottom: "",
-    slug: ""
+    slug: "most-interesting"
   },
   {
     src: "images/memes/no-time-for-that.jpg",
-    description: "",
-    link: "",
+    description: "Ain't nobody got time for that",
+    link: "http://knowyourmeme.com/memes/sweet-brown-aint-nobody-got-time-for-that",
     defaultTextTop: "",
     defaultTextBottom: "",
-    slug: ""
+    slug: "no-time-for-that"
   },
   {
     src: "images/memes/one-does-not-simply.jpg",
-    description: "",
-    link: "",
+    description: "One does not simply",
+    link: "http://knowyourmeme.com/memes/one-does-not-simply",
     defaultTextTop: "",
     defaultTextBottom: "",
-    slug: ""
+    slug: "one-does-not-simply"
   },
   {
     src: "images/memes/scumbag-steve.jpg",
-    description: "",
-    link: "",
+    description: "Scumbag Steve",
+    link: "http://knowyourmeme.com/memes/scumbag-steve",
     defaultTextTop: "",
     defaultTextBottom: "",
-    slug: ""
+    slug: "scumbag-steve"
   },
   {
     src: "images/memes/y-u-no.jpg",
-    description: "",
-    link: "",
+    description: "Y U NO",
+    link: "http://knowyourmeme.com/memes/y-u-no",
     defaultTextTop: "",
-    defaultTextBottom: "",
-    slug: ""
+    defaultTextBottom: "Y U NO",
+    slug: "y-u-no"
   }
 ]);
+
+memeCollection.forEach(function(m) {
+  m.set("uniqueid", m.cid);
+});
 
 var memeListingView = Backbone.View.extend({
     model: memeCollection,
@@ -97,7 +101,7 @@ var memeListingView = Backbone.View.extend({
         'click .list-nav': 'navigateList'
     },
 
-    template: _.template('<% _.each(images, function(img) { %> <li><img src="<%= img.src %>" /><span><%= img.link %></span></li> <% }); %>'),
+    template: _.template('<% _.each(images, function(img) { %> <li data-cid="<%= img.uniqueid %>"><img src="<%= img.src %>" alt="<%= img.description %>" title="<%= img.description %>" /><span><a href="<%= img.link %>" target="_blank">(read)</a></span></li> <% }); %>'),
 
     render: function () {
       this.$(".meme-listing").html(this.template({
@@ -124,7 +128,9 @@ var memeListingView = Backbone.View.extend({
     },
 
     startEditing: function(e) {
-        window.staticshowdown.Views.editorView.loadImage(e.target);
+      var cid = $(e.target).closest("[data-cid]").data("cid");
+      var model = memeCollection.get(cid).toJSON();
+      window.staticshowdown.Views.editorView.loadImage(e.target, model.defaultTextTop, model.defaultTextBottom);
     },
 
     initialize: function (options) {
