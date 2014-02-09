@@ -50,14 +50,20 @@
                     <div id="preview-wrap">
                         <div id="canvas-wrap">
                         </div>
+                        <div class="final-step">
+                          <h2>Amazed By Your Wit?</h2>
+                          <p>You can share it by saving it on imgur, or by sending a link that will let someone else edit it.</p>
+                          <div>
+                            <a id="post-to-imgur" href="#" class="btn">
+                              Upload To Imgur
+                            </a><br />
+                            <a id="edit-this-caption" href="#">Share edit link</a>
+                          </div>
+                        </div>
                         <div class="controls">
-                            <div>
-                              <a id="post-to-imgur" href="#" class="btn">
-                                Share On Imgur
-                              </a><br />
-                              <a id="edit-this-caption" href="#">Share edit link</a>
-                              <a class="btn" href="#" onclick="javascript:$('body').removeClass('editing');">Back to Images</a>
-                            </div>
+                          <div class="heading">
+                            <h2>Enter Your Captions</h2>
+                          </div>
                             <div class="control" data-line="1">
                                 <label for='line1'>Top Line:</label>
                                 <input type='text' id='line1' class='line-box' />
@@ -78,6 +84,8 @@
                                   <option value="Comic Sans MS">Comic Sans</option>
                                 </select>
                             </div>
+                            <br /> <br />
+                            <a class="btn" href="#" onclick="javascript:$('body').removeClass('editing');">&lt;- Back to Images</a>
                         </div>
                         <br style="clear: both;" />
                     </div>
