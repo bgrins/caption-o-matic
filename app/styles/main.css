@@ -41,7 +41,8 @@ h1 a {
   padding: 3px 8px;
 }
 h1 small {
-
+  font-size: 20px;
+  text-decoration: underline;
 }
 .hero-unit {
   margin: 0;
@@ -63,21 +64,37 @@ h1 small {
 	display: none;
 }
 #preview-wrap {
-	border: 1px solid #333;
-	width: 600px;
+	width: 800px;
 	margin: 0 auto;
   position: relative;
+  vertical-align: middle;
+  background: #ddf;
+}
+#preview-wrap .controls:before {
+  content: "";
+  display: block;
+  position:absolute;
+  top: 50%;
+  margin-top: -10px;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid #ddf;
 }
 #preview-wrap .controls {
+  background: #eee;
   position: absolute;
-  top: -1px;
-  border: solid 1px;
+  top: 20px;
+  bottom: 20px;
   padding: 10px;
   width: 200px;
-  right: -250px;
+  right: -220px;
 }
-#preview-wrap .canvas-wrap {
-	float: left;
+
+#canvas-wrap {
+  text-align: center;
 }
 #preview-wrap .control {
 	margin-left: 20px;
@@ -96,6 +113,7 @@ h1 small {
 
 .memes-wrapper {
   border: solid 1px #ccc;
+  border-top: none;
   height: 150px;
   position: relative;
 }
